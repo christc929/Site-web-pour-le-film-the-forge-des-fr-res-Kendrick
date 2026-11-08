@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Forge (2024) — Le film qui forge les hommes</title>
+  <meta name="description" content="Tout sur The Forge, le film des freres Kendrick : histoire, personnages, bandes-annonces et galerie photos.">
+
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- 1. Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 2. Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- 3. Les polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 4. NOTRE theme : TOUJOURS EN DERNIER -->
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo.png" alt="" width="36" height="36">
+        <span>THE FORGE</span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false"
+              aria-label="Ouvrir le menu de navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#histoire">L'histoire</a></li>
+          <li class="nav-item"><a class="nav-link" href="personnages.html">Personnages</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#bandes-annonces">Bandes-annonces</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#galerie">Galerie</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-forge btn-sm" href="contact.html">Nous écrire</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main id="contenu">
+
+    <!-- ---------- HERO ---------- -->
+    <section class="hero d-flex flex-column justify-content-center align-items-center text-center px-3" id="accueil">
+      <p class="surtitre mb-2">Kendrick Brothers &middot; 2024</p>
+      <h1 class="display-forge mb-3">THE FORGE</h1>
+      <p class="titre fs-4 mb-4" style="letter-spacing:.22em">Le fer aiguise le fer</p>
+
+      <p class="text-secondary fs-5 mb-4 mx-auto" style="max-width: 55ch">
+        À 19 ans, Isaiah Wright n'a ni travail, ni projet, ni direction.
+        Un mentor inattendu va tout changer.
+      </p>
+
+      <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
+        <button type="button" class="btn btn-forge" data-bs-toggle="modal" data-bs-target="#modaleTrailer">
+          <i class="bi bi-play-fill" aria-hidden="true"></i> Voir la bande-annonce
+        </button>
+        <a href="#histoire" class="btn btn-outline-forge">Découvrir l'histoire</a>
+      </div>
+
+      <ul class="list-inline text-secondary small text-uppercase mb-0" style="letter-spacing:.12em">
+        <li class="list-inline-item">2 h 05</li>
+        <li class="list-inline-item text-warning" aria-hidden="true">&middot;</li>
+        <li class="list-inline-item">Drame</li>
+        <li class="list-inline-item text-warning" aria-hidden="true">&middot;</li>
+        <li class="list-inline-item">23 août 2024</li>
+        <li class="list-inline-item text-warning" aria-hidden="true">&middot;</li>
+        <li class="list-inline-item">IMDb 6,8/10</li>
+      </ul>
+    </section>
+
+    <!-- ---------- STATISTIQUES ---------- -->
+    <section class="section-sombre py-5" id="chiffres">
+      <div class="container">
+        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+          <div class="col">
+            <p class="stat-nombre">125</p>
+            <p class="stat-libelle">minutes de film</p>
+          </div>
+          <div class="col">
+            <p class="stat-nombre">40,4 M$</p>
+            <p class="stat-libelle">au box-office</p>
+          </div>
+          <div class="col">
+            <p class="stat-nombre">2024</p>
+            <p class="stat-libelle">année de sortie</p>
+          </div>
+          <div class="col">
+            <p class="stat-nombre">9<sup>e</sup></p>
+            <p class="stat-libelle">film des Kendrick</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- L'HISTOIRE ---------- -->
+    <section class="section" id="histoire">
+      <div class="container">
+        <h2 class="titre-section">L'histoire</h2>
+        <p class="chapeau">Un jeune homme à la dérive. Un mentor qui refuse de le lâcher.</p>
+
+        <div class="row g-5 align-items-start">
+
+          <div class="col-12 col-md-5 col-lg-4">
+            <figure class="mb-0">
+              <img src="assets/images/affiche.jpg" alt="Affiche officielle du film The Forge"
+                   class="img-fluid rounded-3 shadow-lg" style="border:1px solid var(--tf-acier)">
+              <figcaption class="text-center text-secondary small mt-2">
+                Affiche officielle &mdash; Sony Pictures / Affirm Films
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="col-12 col-md-7 col-lg-8">
+            <p>
+              À Charlotte, en Caroline du Nord, <strong>Isaiah Wright</strong> a 19 ans et le diplôme
+              du lycée en poche depuis un an. Depuis, plus rien : pas d'études, pas de travail,
+              pas de plan.
+            </p>
+            <p>
+              Sa mère, <strong>Cynthia</strong>, l'élève seule et voit son fils s'enliser. Elle finit
+              par lui poser un ultimatum : trouver un emploi sous un mois, ou quitter la maison.
+            </p>
+            <p>
+              Isaiah décroche un poste chez <em>Moore Fitness</em>. Ce qu'il ignore, c'est que son
+              patron, <strong>Joshua Moore</strong>, ne recrute pas seulement des employés :
+              il investit dans des hommes.
+            </p>
+
+            <blockquote class="blockquote border-start border-4 border-primary ps-4 py-2 my-4 fst-italic">
+              <p class="mb-1">« Le fer aiguise le fer, ainsi un homme aiguise un autre homme. »</p>
+              <footer class="blockquote-footer text-primary text-uppercase small mt-2" style="letter-spacing:.1em">
+                Proverbes 27:17
+              </footer>
+            </blockquote>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- THEMES ---------- -->
+    <section class="section section-sombre" id="themes">
+      <div class="container">
+        <h2 class="titre-section">Les thèmes du film</h2>
+        <p class="chapeau">Six idées qui traversent le récit du début à la fin.</p>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-people-fill fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">Le mentorat</h3>
+                <p class="card-text">Personne ne devient un homme tout seul : il faut quelqu'un devant soi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-calendar-check-fill fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">La discipline</h3>
+                <p class="card-text">Les rêves ne valent rien sans habitudes quotidiennes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-unlock-fill fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">Le pardon</h3>
+                <p class="card-text">Refuser de pardonner, c'est se laisser enchaîner à celui qui nous a blessé.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-heart-fill fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">La prière d'une mère</h3>
+                <p class="card-text">Le combat le plus décisif se livre parfois hors du champ de bataille.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-shield-check fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">La responsabilité</h3>
+                <p class="card-text">Grandir, c'est répondre de ses actes sans chercher d'excuse.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <i class="bi bi-hammer fs-2 text-primary" aria-hidden="true"></i>
+                <h3 class="card-title h5 mt-3">L'intégrité au travail</h3>
+                <p class="card-text">La manière dont on travaille révèle qui on est vraiment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PERSONNAGES ---------- -->
+    <section class="section" id="personnages">
+      <div class="container">
+        <h2 class="titre-section">Les personnages</h2>
+        <p class="chapeau">Six visages, une même forge.</p>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <article class="card h-100 overflow-hidden">
+              <img src="assets/images/isaiah.jpg" class="card-img-top object-fit-cover"
+                   style="aspect-ratio: 4/5" alt="Portrait de Isaiah Wright" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title h5 mb-1">Isaiah Wright</h3>
+                <p class="carte-acteur mb-2">Aspen Kennedy &middot; Le héros</p>
+                <p class="card-text">Sorti du lycée sans projet, il vit chez sa mère et évite soigneusement toute responsabilité. Fier, doué au basket, il est surtout terrifié à l'idée d'échouer.</p>
+                <blockquote class="carte-citation mt-3 mb-0">« Je ne savais même pas qu'on pouvait décider de qui on allait devenir. »</blockquote>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 overflow-hidden">
+              <img src="assets/images/joshua.jpg" class="card-img-top object-fit-cover"
+                   style="aspect-ratio: 4/5" alt="Portrait de Joshua Moore" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title h5 mb-1">Joshua Moore</h3>
+                <p class="carte-acteur mb-2">Cameron Arnett &middot; Le mentor</p>
+                <p class="card-text">Président de Moore Fitness. Il ne se contente pas d'embaucher : il forme. Créateur du groupe « The Forge ».</p>
+                <blockquote class="carte-citation mt-3 mb-0">« Je ne cherche pas des employés. Je cherche des hommes prêts à être forgés. »</blockquote>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 overflow-hidden">
+              <img src="assets/images/cynthia.jpg" class="card-img-top object-fit-cover"
+                   style="aspect-ratio: 4/5" alt="Portrait de Cynthia Wright" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title h5 mb-1">Cynthia Wright</h3>
+                <p class="carte-acteur mb-2">Priscilla C. Shirer &middot; La mère</p>
+                <p class="card-text">Elle élève Isaiah seule. Épuisée de voir son fils gâcher son potentiel, elle passe de la colère à la prière.</p>
+                <blockquote class="carte-citation mt-3 mb-0">« Je ne peux pas te forcer à grandir. Mais je ne cesserai pas de prier pour toi. »</blockquote>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="personnages.html" class="btn btn-outline-forge">Voir tous les personnages</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CARROUSEL DE CITATIONS ---------- -->
+    <section class="section section-sombre">
+      <div class="container">
+        <h2 class="titre-section">Répliques</h2>
+        <p class="chapeau">Ce que les personnages ont à te dire.</p>
+
+        <div id="carrouselCitations" class="carousel slide mx-auto" style="max-width: 860px" data-bs-ride="carousel">
+
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carrouselCitations" data-bs-slide-to="0"
+                    class="active" aria-label="Citation 1"></button>
+            <button type="button" data-bs-target="#carrouselCitations" data-bs-slide-to="1"
+                    class="" aria-label="Citation 2"></button>
+            <button type="button" data-bs-target="#carrouselCitations" data-bs-slide-to="2"
+                    class="" aria-label="Citation 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="text-center px-4 px-md-5 py-5">
+                <i class="bi bi-quote fs-1" aria-hidden="true"></i>
+                <p class="fs-4 fst-italic mb-4 mx-auto" style="max-width: 60ch">Je ne cherche pas des employés. Je cherche des hommes prêts à être forgés.</p>
+                <p class="carte-acteur mb-0">Joshua Moore</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-center px-4 px-md-5 py-5">
+                <i class="bi bi-quote fs-1" aria-hidden="true"></i>
+                <p class="fs-4 fst-italic mb-4 mx-auto" style="max-width: 60ch">Tu combats au mauvais endroit, ma fille. Change de champ de bataille.</p>
+                <p class="carte-acteur mb-0">Miss Clara Williams</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-center px-4 px-md-5 py-5">
+                <i class="bi bi-quote fs-1" aria-hidden="true"></i>
+                <p class="fs-4 fst-italic mb-4 mx-auto" style="max-width: 60ch">Je ne peux pas te forcer à grandir. Mais je ne cesserai pas de prier pour toi.</p>
+                <p class="carte-acteur mb-0">Cynthia Wright</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carrouselCitations" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carrouselCitations" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- BANDES-ANNONCES ---------- -->
+    <section class="section" id="bandes-annonces">
+      <div class="container">
+        <h2 class="titre-section">Bandes-annonces</h2>
+        <p class="chapeau">
+          Remplace <code>REMPLACE_PAR_ID</code> par le vrai identifiant YouTube
+          (voir <code>ressources/guide-medias.md</code>).
+        </p>
+
+        <div class="ratio ratio-16x9 mx-auto rounded-3 overflow-hidden shadow-lg"
+             style="max-width: 900px; border:1px solid var(--tf-acier)">
+          <iframe src="https://www.youtube.com/embed/REMPLACE_PAR_ID"
+                  title="Bande-annonce officielle de The Forge"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mx-auto" style="max-width: 900px">
+          <div class="col">
+            <article class="card h-100 overflow-hidden">
+              <img src="assets/images/trailer-02.jpg" class="card-img-top object-fit-cover"
+                   style="aspect-ratio:16/9" alt="Miniature : extrait, la première leçon" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title h6 mb-1">Extrait &mdash; La première leçon</h3>
+                <p class="carte-acteur mb-0">1:47</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 overflow-hidden">
+              <img src="assets/images/trailer-03.jpg" class="card-img-top object-fit-cover"
+                   style="aspect-ratio:16/9" alt="Miniature : dans les coulisses" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title h6 mb-1">Dans les coulisses</h3>
+                <p class="carte-acteur mb-0">4:12</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- GALERIE ---------- -->
+    <section class="section section-sombre" id="galerie">
+      <div class="container">
+        <h2 class="titre-section">Galerie</h2>
+        <p class="chapeau">Des images du film et du tournage.</p>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-01.jpg" alt="Isaiah sur le terrain de basket" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-02.jpg" alt="Cynthia dans sa cuisine" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-03.jpg" alt="Joshua Moore dans son bureau" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-04.jpg" alt="Le plateau de Moore Fitness" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-05.jpg" alt="Réunion du groupe The Forge" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-06.jpg" alt="Miss Clara en pleine discussion" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-07.jpg" alt="Alex Kendrick dirige une scène" loading="lazy">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="photo-galerie mb-0">
+              <img src="assets/images/galerie-08.jpg" alt="La scène finale" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- FICHE TECHNIQUE ---------- -->
+    <section class="section" id="fiche">
+      <div class="container">
+        <h2 class="titre-section">Fiche technique</h2>
+        <p class="chapeau">Toutes les données du film.</p>
+
+        <table class="tableau-fiche">
+          <caption class="text-center text-secondary small pb-3">Informations sur le film The Forge (2024)</caption>
+          <tbody>
+            <tr><th scope="row">Réalisateur</th><td>Alex Kendrick</td></tr>
+            <tr><th scope="row">Scénario</th><td>Alex &amp; Stephen Kendrick</td></tr>
+            <tr><th scope="row">Producteur</th><td>Stephen Kendrick</td></tr>
+            <tr><th scope="row">Durée</th><td>125 minutes (2 h 05)</td></tr>
+            <tr><th scope="row">Sortie salles</th><td>23 août 2024</td></tr>
+            <tr><th scope="row">Budget</th><td>5 000 000 $</td></tr>
+            <tr><th scope="row">Box-office</th><td>40 400 000 $</td></tr>
+            <tr><th scope="row">Distributeur</th><td>Sony Pictures Releasing</td></tr>
+            <tr><th scope="row">Tournage</th><td>Albany, Géorgie — juin/juillet 2023</td></tr>
+          </tbody>
+        </table>
+
+        <div class="row g-4 mt-5 mx-auto" style="max-width: 860px">
+          <div class="col-12 col-md-4">
+            <div class="d-flex justify-content-between align-items-baseline mb-2">
+              <span class="text-uppercase small" style="letter-spacing:.1em">IMDb</span>
+              <strong>6,8/10</strong>
+            </div>
+            <div class="progress" style="height:8px" role="progressbar" aria-label="Note IMDb"
+                 aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width:68%; background: var(--tf-degrade)"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex justify-content-between align-items-baseline mb-2">
+              <span class="text-uppercase small" style="letter-spacing:.1em">Rotten Tomatoes</span>
+              <strong>63 %</strong>
+            </div>
+            <div class="progress" style="height:8px" role="progressbar" aria-label="Note Rotten Tomatoes"
+                 aria-valuenow="63" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width:63%; background: var(--tf-degrade)"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex justify-content-between align-items-baseline mb-2">
+              <span class="text-uppercase small" style="letter-spacing:.1em">CinemaScore</span>
+              <strong>A+</strong>
+            </div>
+            <div class="progress" style="height:8px" role="progressbar" aria-label="Note CinemaScore"
+                 aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width:96%; background: var(--tf-degrade)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- FAQ ---------- -->
+    <section class="section section-sombre" id="questions">
+      <div class="container">
+        <h2 class="titre-section">Questions fréquentes</h2>
+        <p class="chapeau">Ce qu'on nous demande le plus souvent.</p>
+
+        <div class="accordion mx-auto" style="max-width: 760px" id="faq">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#faq-0"
+                      aria-expanded="true" aria-controls="faq-0">
+                Faut-il avoir vu War Room avant ?
+              </button>
+            </h3>
+            <div id="faq-0" class="accordion-collapse collapse show" data-bs-parent="#faq">
+              <div class="accordion-body">Non. <em>The Forge</em> se comprend seul. Mais reconnaître Miss Clara et Tony Jordan fait plaisir.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#faq-1"
+                      aria-expanded="false" aria-controls="faq-1">
+                Le film est-il tiré d'une histoire vraie ?
+              </button>
+            </h3>
+            <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Non, c'est une fiction. Mais les frères Kendrick se sont inspirés de vrais groupes de mentorat.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#faq-2"
+                      aria-expanded="false" aria-controls="faq-2">
+                Pourquoi ce titre, « The Forge » ?
+              </button>
+            </h3>
+            <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">La forge est l'atelier du forgeron : on y chauffe le métal à blanc pour le frapper et lui donner sa forme.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#faq-3"
+                      aria-expanded="false" aria-controls="faq-3">
+                Où voir le film ?
+              </button>
+            </h3>
+            <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">En VOD sur les plateformes habituelles, et sur Netflix depuis le 21 décembre 2024.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#faq-4"
+                      aria-expanded="false" aria-controls="faq-4">
+                Pour quel public ?
+              </button>
+            </h3>
+            <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Tous publics. Idéal en famille, particulièrement pour les adolescents et jeunes adultes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- APPEL A L'ACTION ---------- -->
+    <section class="py-5 text-center" style="background: var(--tf-degrade); color:#0d0d0f">
+      <div class="container">
+        <h2 class="mb-2" style="color:#0d0d0f">Le film t'a marqué ?</h2>
+        <p class="mb-4" style="color: rgba(13,13,15,.75)">Dis-nous ce que tu en as pensé.</p>
+        <a href="contact.html" class="btn" style="background:#0d0d0f; color:#f5f0e8">Nous écrire</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PIED DE PAGE ================= -->
+  <footer class="pied-page pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <h3 class="text-uppercase mb-3">The Forge</h3>
+          <p class="text-secondary small mb-0">
+            Site de fan non officiel, réalisé dans le cadre d'un apprentissage du développement
+            web avec HTML, CSS et Bootstrap.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h3 class="text-uppercase mb-3">Navigation</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html#histoire" class="lien-discret">L'histoire</a></li>
+            <li class="mb-2"><a href="personnages.html" class="lien-discret">Personnages</a></li>
+            <li class="mb-2"><a href="index.html#galerie" class="lien-discret">Galerie</a></li>
+            <li class="mb-2"><a href="contact.html" class="lien-discret">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h3 class="text-uppercase mb-3">Liens officiels</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="https://www.theforgemovie.com" target="_blank" rel="noopener" class="lien-discret">Site officiel</a></li>
+            <li class="mb-2"><a href="https://www.kendrickbrothers.com" target="_blank" rel="noopener" class="lien-discret">Kendrick Brothers</a></li>
+            <li class="mb-2"><a href="https://www.imdb.com/title/tt26731216/" target="_blank" rel="noopener" class="lien-discret">Fiche IMDb</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h3 class="text-uppercase mb-3">Suivre</h3>
+          <div class="d-flex gap-3 fs-4">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="my-4" style="border-color: var(--tf-acier)">
+
+      <p class="pied-mentions text-center mb-0">
+        Images &copy; Sony Pictures / Affirm Films / Kendrick Brothers.
+        Tous droits réservés à leurs propriétaires respectifs.<br>
+        Site réalisé dans un but pédagogique &mdash; 2026.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= MODALE BANDE-ANNONCE ================= -->
+  <div class="modal fade" id="modaleTrailer" tabindex="-1" aria-labelledby="titreModale" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--tf-charbon)">
+
+        <div class="modal-header" style="border-color: var(--tf-acier)">
+          <h5 class="modal-title" id="titreModale">Bande-annonce officielle</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/REMPLACE_PAR_ID"
+                    title="Bande-annonce officielle de The Forge"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Validation des formulaires — les 7 lignes du chapitre 6
+    document.querySelectorAll(".needs-validation").forEach(function (formulaire) {
+      formulaire.addEventListener("submit", function (evenement) {
+        if (!formulaire.checkValidity()) {
+          evenement.preventDefault();
+          evenement.stopPropagation();
+        }
+        formulaire.classList.add("was-validated");
+      });
+    });
+
+    // Le curseur de note
+    var champNote = document.getElementById("note");
+    if (champNote) {
+      champNote.addEventListener("input", function () {
+        document.getElementById("valeurNote").textContent = this.value;
+      });
+    }
+  </script>
+
+</body>
+</html>

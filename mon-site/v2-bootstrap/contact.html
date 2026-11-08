@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — The Forge (2024)</title>
+  <meta name="description" content="Donne ton avis sur le film The Forge.">
+
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- 1. Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 2. Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- 3. Les polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 4. NOTRE theme : TOUJOURS EN DERNIER -->
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo.png" alt="" width="36" height="36">
+        <span>THE FORGE</span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false"
+              aria-label="Ouvrir le menu de navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#histoire">L'histoire</a></li>
+          <li class="nav-item"><a class="nav-link" href="personnages.html">Personnages</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#bandes-annonces">Bandes-annonces</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#galerie">Galerie</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-forge btn-sm" href="contact.html">Nous écrire</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main id="contenu">
+
+    <section class="section">
+      <div class="container">
+        <p class="surtitre text-center">Contact</p>
+        <h1 class="titre-section">Donne ton avis</h1>
+        <p class="chapeau">
+          Le film t'a marqué ? Dis-nous pourquoi. Tous les champs marqués
+          <span class="text-primary">*</span> sont obligatoires.
+        </p>
+
+        <form class="needs-validation mx-auto" style="max-width: 660px" novalidate>
+          <div class="row g-3">
+
+            <div class="col-12 col-md-6">
+              <label for="prenom" class="form-label">Prénom <span class="text-primary">*</span></label>
+              <input type="text" class="form-control" id="prenom" name="prenom" required minlength="2" autocomplete="given-name">
+              <div class="invalid-feedback">Merci d'indiquer ton prénom (2 caractères minimum).</div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="nom" class="form-label">Nom <span class="text-primary">*</span></label>
+              <input type="text" class="form-control" id="nom" name="nom" required autocomplete="family-name">
+              <div class="invalid-feedback">Merci d'indiquer ton nom.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Adresse e-mail <span class="text-primary">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" required
+                     placeholder="prenom@exemple.fr" autocomplete="email">
+              <div class="invalid-feedback">Cette adresse e-mail ne semble pas valide.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="sujet" class="form-label">Sujet</label>
+              <select class="form-select" id="sujet" name="sujet">
+                <option value="avis" selected>Mon avis sur le film</option>
+                <option value="question">Une question</option>
+                <option value="erreur">Signaler une erreur sur le site</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="note" class="form-label">Ta note sur 10 : <output id="valeurNote">8</output></label>
+              <input type="range" class="form-range" id="note" name="note" min="0" max="10" step="1" value="8">
+            </div>
+
+            <div class="col-12">
+              <label for="message" class="form-label">Ton message <span class="text-primary">*</span></label>
+              <textarea class="form-control" id="message" name="message" rows="6" required minlength="10"
+                        placeholder="Qu'as-tu pensé du film ?"></textarea>
+              <div class="invalid-feedback">Écris au moins 10 caractères.</div>
+              <div class="form-text">Sois honnête, c'est plus intéressant.</div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rgpd" required>
+                <label class="form-check-label" for="rgpd">
+                  J'accepte que ce message soit enregistré pour être lu. <span class="text-primary">*</span>
+                </label>
+                <div class="invalid-feedback">Il faut cocher cette case pour envoyer.</div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex flex-column flex-sm-row gap-3">
+              <button type="submit" class="btn btn-forge">
+                <i class="bi bi-send-fill" aria-hidden="true"></i> Envoyer
+              </button>
+              <button type="reset" class="btn btn-outline-forge">Effacer</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section-sombre">
+      <div class="container">
+        <h2 class="titre-section">Nous trouver</h2>
+        <p class="chapeau">Trois façons de nous joindre.</p>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 text-center"><div class="card-body">
+              <i class="bi bi-envelope-fill fs-2 text-primary" aria-hidden="true"></i>
+              <h3 class="card-title h5 mt-3">Par e-mail</h3>
+              <p class="card-text">Écris-nous directement, on répond à tout le monde.</p>
+            </div></div>
+          </div>
+          <div class="col">
+            <div class="card h-100 text-center"><div class="card-body">
+              <i class="bi bi-people-fill fs-2 text-primary" aria-hidden="true"></i>
+              <h3 class="card-title h5 mt-3">Sur les réseaux</h3>
+              <p class="card-text">Retrouve les actualités du film sur les comptes officiels.</p>
+            </div></div>
+          </div>
+          <div class="col">
+            <div class="card h-100 text-center"><div class="card-body">
+              <i class="bi bi-code-slash fs-2 text-primary" aria-hidden="true"></i>
+              <h3 class="card-title h5 mt-3">À propos du site</h3>
+              <p class="card-text">Projet d'apprentissage : HTML, CSS et Bootstrap 5.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PIED DE PAGE ================= -->
+  <footer class="pied-page pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <h3 class="text-uppercase mb-3">The Forge</h3>
+          <p class="text-secondary small mb-0">
+            Site de fan non officiel, réalisé dans le cadre d'un apprentissage du développement
+            web avec HTML, CSS et Bootstrap.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h3 class="text-uppercase mb-3">Navigation</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html#histoire" class="lien-discret">L'histoire</a></li>
+            <li class="mb-2"><a href="personnages.html" class="lien-discret">Personnages</a></li>
+            <li class="mb-2"><a href="index.html#galerie" class="lien-discret">Galerie</a></li>
+            <li class="mb-2"><a href="contact.html" class="lien-discret">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h3 class="text-uppercase mb-3">Liens officiels</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="https://www.theforgemovie.com" target="_blank" rel="noopener" class="lien-discret">Site officiel</a></li>
+            <li class="mb-2"><a href="https://www.kendrickbrothers.com" target="_blank" rel="noopener" class="lien-discret">Kendrick Brothers</a></li>
+            <li class="mb-2"><a href="https://www.imdb.com/title/tt26731216/" target="_blank" rel="noopener" class="lien-discret">Fiche IMDb</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h3 class="text-uppercase mb-3">Suivre</h3>
+          <div class="d-flex gap-3 fs-4">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" class="lien-discret" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="my-4" style="border-color: var(--tf-acier)">
+
+      <p class="pied-mentions text-center mb-0">
+        Images &copy; Sony Pictures / Affirm Films / Kendrick Brothers.
+        Tous droits réservés à leurs propriétaires respectifs.<br>
+        Site réalisé dans un but pédagogique &mdash; 2026.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= MODALE BANDE-ANNONCE ================= -->
+  <div class="modal fade" id="modaleTrailer" tabindex="-1" aria-labelledby="titreModale" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--tf-charbon)">
+
+        <div class="modal-header" style="border-color: var(--tf-acier)">
+          <h5 class="modal-title" id="titreModale">Bande-annonce officielle</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/REMPLACE_PAR_ID"
+                    title="Bande-annonce officielle de The Forge"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Validation des formulaires — les 7 lignes du chapitre 6
+    document.querySelectorAll(".needs-validation").forEach(function (formulaire) {
+      formulaire.addEventListener("submit", function (evenement) {
+        if (!formulaire.checkValidity()) {
+          evenement.preventDefault();
+          evenement.stopPropagation();
+        }
+        formulaire.classList.add("was-validated");
+      });
+    });
+
+    // Le curseur de note
+    var champNote = document.getElementById("note");
+    if (champNote) {
+      champNote.addEventListener("input", function () {
+        document.getElementById("valeurNote").textContent = this.value;
+      });
+    }
+  </script>
+
+</body>
+</html>
