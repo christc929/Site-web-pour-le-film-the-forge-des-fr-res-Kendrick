@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Les personnages — The Forge (2024)</title>
+  <meta name="description" content="Isaiah, Joshua, Cynthia, Miss Clara, Tony et Janelle : les six personnages du film The Forge.">
+
+  <link rel="icon" href="images/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
+
+  <!-- ================= EN-TETE ================= -->
+  <header class="entete">
+    <div class="conteneur entete-contenu">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="" width="40" height="40">
+        <span>THE FORGE</span>
+      </a>
+
+      <!-- La case a cocher invisible : elle memorise l'etat ouvert/ferme -->
+      <input type="checkbox" id="bascule-menu" class="bascule-menu">
+
+      <!-- Le bouton burger visible -->
+      <label for="bascule-menu" class="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Le voile : cliquer a cote referme le menu -->
+      <label for="bascule-menu" class="voile" aria-hidden="true"></label>
+
+      <nav class="navigation" aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#histoire">L'histoire</a></li>
+          <li><a href="personnages.html" class="actif">Personnages</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="index.html#bandes-annonces">Bandes-annonces</a></li>
+          <li><a href="index.html#fiche">Fiche technique</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="section">
+      <div class="conteneur">
+        <p class="hero-surtitre centre">Casting</p>
+        <h1 class="section-titre">Les personnages</h1>
+        <p class="section-chapeau">Six visages, une même forge.</p>
+
+        <div class="grille-personnages">
+        <article class="carte-personnage" id="isaiah">
+          <img src="images/isaiah.jpg" alt="Portrait de Isaiah Wright" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Isaiah Wright</h3>
+            <p class="carte-acteur">Aspen Kennedy &middot; Le héros</p>
+            <p class="carte-description">Sorti du lycée sans projet, il vit chez sa mère et évite soigneusement toute responsabilité. Fier, doué au basket, il est surtout terrifié à l'idée d'échouer.</p>
+            <blockquote class="carte-citation">« Je ne savais même pas qu'on pouvait décider de qui on allait devenir. »</blockquote>
+          </div>
+        </article>
+        <article class="carte-personnage" id="joshua">
+          <img src="images/joshua.jpg" alt="Portrait de Joshua Moore" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Joshua Moore</h3>
+            <p class="carte-acteur">Cameron Arnett &middot; Le mentor</p>
+            <p class="carte-description">Président de Moore Fitness. Chef d'entreprise exigeant et bienveillant, il ne se contente pas d'embaucher : il forme. Créateur du groupe « The Forge ».</p>
+            <blockquote class="carte-citation">« Je ne cherche pas des employés. Je cherche des hommes prêts à être forgés. »</blockquote>
+          </div>
+        </article>
+        <article class="carte-personnage" id="cynthia">
+          <img src="images/cynthia.jpg" alt="Portrait de Cynthia Wright" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Cynthia Wright</h3>
+            <p class="carte-acteur">Priscilla C. Shirer &middot; La mère</p>
+            <p class="carte-description">Elle élève Isaiah seule. Épuisée de voir son fils gâcher son potentiel, elle passe de la colère à la prière — et découvre que c'est là que se gagne le vrai combat.</p>
+            <blockquote class="carte-citation">« Je ne peux pas te forcer à grandir. Mais je ne cesserai pas de prier pour toi. »</blockquote>
+          </div>
+        </article>
+        <article class="carte-personnage" id="clara">
+          <img src="images/clara.jpg" alt="Portrait de Miss Clara Williams" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Miss Clara Williams</h3>
+            <p class="carte-acteur">Karen Abercrombie &middot; La guerrière de prière</p>
+            <p class="carte-description">Personnage emblématique de War Room, elle revient ici en mentor de Cynthia. Petite dame âgée, franc-parler redoutable, foi inébranlable.</p>
+            <blockquote class="carte-citation">« Tu combats au mauvais endroit, ma fille. Change de champ de bataille. »</blockquote>
+          </div>
+        </article>
+        <article class="carte-personnage" id="tony">
+          <img src="images/tony.jpg" alt="Portrait de Tony Jordan" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Tony Jordan</h3>
+            <p class="carte-acteur">T.C. Stallings &middot; Le vétéran de la Forge</p>
+            <p class="carte-description">Autre visage venu de War Room. Ancien homme d'affaires arrogant devenu accompagnateur, il est la preuve vivante qu'on peut changer.</p>
+            <blockquote class="carte-citation">« J'ai été exactement là où tu es. Crois-moi, tu ne veux pas y rester. »</blockquote>
+          </div>
+        </article>
+        <article class="carte-personnage" id="janelle">
+          <img src="images/janelle.jpg" alt="Portrait de Janelle Moore" width="600" height="750" loading="lazy">
+          <div class="carte-corps">
+            <h3>Janelle Moore</h3>
+            <p class="carte-acteur">B.J. Arnett &middot; L'épouse de Joshua</p>
+            <p class="carte-description">Discrète mais décisive, elle est le socle du foyer Moore et le premier soutien de Joshua.</p>
+            <blockquote class="carte-citation">« Derrière un homme qui forge, il y a quelqu'un qui entretient le feu. »</blockquote>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sombre">
+      <div class="conteneur">
+        <h2 class="section-titre">Autres apparitions</h2>
+        <p class="section-chapeau">Des visages que tu reconnaîtras peut-être.</p>
+
+        <div class="grille-themes">
+          <article class="carte-theme" data-numero="01">
+            <h3>Ken Bevel</h3>
+            <p>James &mdash; déjà présent dans plusieurs films des frères Kendrick.</p>
+          </article>
+          <article class="carte-theme" data-numero="02">
+            <h3>Benjamin Watson</h3>
+            <p>Dans son propre rôle. Ancien joueur de NFL.</p>
+          </article>
+          <article class="carte-theme" data-numero="03">
+            <h3>Jonathan Evans</h3>
+            <p>Jonathan &mdash; aumônier et auteur.</p>
+          </article>
+          <article class="carte-theme" data-numero="04">
+            <h3>Tommy Woodard</h3>
+            <p>Bobby &mdash; la touche d'humour du film.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PIED DE PAGE ================= -->
+  <footer class="pied-page">
+    <div class="conteneur">
+
+      <div class="pied-colonnes">
+
+        <div class="pied-colonne">
+          <h3>The Forge</h3>
+          <p>
+            Site de fan non officiel, réalisé dans le cadre d'un apprentissage
+            du développement web en HTML et CSS.
+          </p>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html#histoire">L'histoire</a></li>
+            <li><a href="personnages.html">Personnages</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="index.html#fiche">Fiche technique</a></li>
+          </ul>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Liens officiels</h3>
+          <ul>
+            <li><a href="https://www.theforgemovie.com" target="_blank" rel="noopener">Site officiel</a></li>
+            <li><a href="https://www.kendrickbrothers.com" target="_blank" rel="noopener">Kendrick Brothers</a></li>
+            <li><a href="https://www.imdb.com/title/tt26731216/" target="_blank" rel="noopener">Fiche IMDb</a></li>
+          </ul>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Suivre</h3>
+          <div class="pied-reseaux">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">&#9679;</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">&#9679;</a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">&#9679;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="pied-mentions">
+        Images &copy; Sony Pictures / Affirm Films / Kendrick Brothers.
+        Tous droits réservés à leurs propriétaires respectifs.
+        <br>
+        Site réalisé dans un but pédagogique &mdash; 2026.
+      </p>
+
+    </div>
+  </footer>
+
+  <a href="#contenu" class="retour-haut" aria-label="Retour en haut de la page">
+    <span aria-hidden="true">&uarr;</span>
+  </a>
+
+</body>
+</html>

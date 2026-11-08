@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galerie photos — The Forge (2024)</title>
+  <meta name="description" content="Photos du film et du tournage de The Forge, en mosaique responsive.">
+
+  <link rel="icon" href="images/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
+
+  <!-- ================= EN-TETE ================= -->
+  <header class="entete">
+    <div class="conteneur entete-contenu">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="" width="40" height="40">
+        <span>THE FORGE</span>
+      </a>
+
+      <!-- La case a cocher invisible : elle memorise l'etat ouvert/ferme -->
+      <input type="checkbox" id="bascule-menu" class="bascule-menu">
+
+      <!-- Le bouton burger visible -->
+      <label for="bascule-menu" class="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Le voile : cliquer a cote referme le menu -->
+      <label for="bascule-menu" class="voile" aria-hidden="true"></label>
+
+      <nav class="navigation" aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#histoire">L'histoire</a></li>
+          <li><a href="personnages.html">Personnages</a></li>
+          <li><a href="galerie.html" class="actif">Galerie</a></li>
+          <li><a href="index.html#bandes-annonces">Bandes-annonces</a></li>
+          <li><a href="index.html#fiche">Fiche technique</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="section">
+      <div class="conteneur">
+        <p class="hero-surtitre centre">Images</p>
+        <h1 class="section-titre">Galerie</h1>
+        <p class="section-chapeau">Huit images du film et du tournage, en mosaïque responsive.</p>
+
+        <div class="grille-galerie">
+        <figure class="element-galerie">
+          <img src="images/galerie-01.jpg" alt="Isaiah sur le terrain de basket" width="1200" height="800" loading="lazy">
+          <figcaption>Isaiah sur le terrain de basket</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-02.jpg" alt="Cynthia dans sa cuisine" width="1200" height="800" loading="lazy">
+          <figcaption>Cynthia dans sa cuisine</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-03.jpg" alt="Joshua Moore dans son bureau" width="1200" height="800" loading="lazy">
+          <figcaption>Joshua Moore dans son bureau</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-04.jpg" alt="Le plateau de Moore Fitness" width="1200" height="800" loading="lazy">
+          <figcaption>Le plateau de Moore Fitness</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-05.jpg" alt="Réunion du groupe The Forge" width="1200" height="800" loading="lazy">
+          <figcaption>Réunion du groupe The Forge</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-06.jpg" alt="Miss Clara en pleine discussion" width="1200" height="800" loading="lazy">
+          <figcaption>Miss Clara en pleine discussion</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-07.jpg" alt="Alex Kendrick dirige une scène" width="1200" height="800" loading="lazy">
+          <figcaption>Alex Kendrick dirige une scène</figcaption>
+        </figure>
+        <figure class="element-galerie">
+          <img src="images/galerie-08.jpg" alt="La scène finale" width="1200" height="800" loading="lazy">
+          <figcaption>La scène finale</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sombre">
+      <div class="conteneur">
+        <h2 class="section-titre">Le tournage</h2>
+
+        <div class="histoire-texte" style="max-width: 760px; margin: 0 auto">
+          <p>
+            Le tournage de The Forge s'est déroulé en juin et juillet 2023 à Albany, en Géorgie
+            &mdash; la ville d'origine des frères Kendrick, où ils ont tourné la quasi-totalité
+            de leurs films.
+          </p>
+          <p>
+            La salle de sport Moore Fitness a été recréée dans un bâtiment industriel local.
+            Les scènes de basket ont été tournées en extérieur, sur de vrais terrains de quartier,
+            avec des figurants recrutés sur place.
+          </p>
+          <p>
+            Fidèle à la méthode des Kendrick, une grande partie de l'équipe technique était
+            composée de bénévoles issus d'églises locales. C'est ce modèle de production qui
+            permet à leurs films d'afficher des budgets très bas pour un rendu professionnel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PIED DE PAGE ================= -->
+  <footer class="pied-page">
+    <div class="conteneur">
+
+      <div class="pied-colonnes">
+
+        <div class="pied-colonne">
+          <h3>The Forge</h3>
+          <p>
+            Site de fan non officiel, réalisé dans le cadre d'un apprentissage
+            du développement web en HTML et CSS.
+          </p>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html#histoire">L'histoire</a></li>
+            <li><a href="personnages.html">Personnages</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="index.html#fiche">Fiche technique</a></li>
+          </ul>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Liens officiels</h3>
+          <ul>
+            <li><a href="https://www.theforgemovie.com" target="_blank" rel="noopener">Site officiel</a></li>
+            <li><a href="https://www.kendrickbrothers.com" target="_blank" rel="noopener">Kendrick Brothers</a></li>
+            <li><a href="https://www.imdb.com/title/tt26731216/" target="_blank" rel="noopener">Fiche IMDb</a></li>
+          </ul>
+        </div>
+
+        <div class="pied-colonne">
+          <h3>Suivre</h3>
+          <div class="pied-reseaux">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">&#9679;</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">&#9679;</a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">&#9679;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="pied-mentions">
+        Images &copy; Sony Pictures / Affirm Films / Kendrick Brothers.
+        Tous droits réservés à leurs propriétaires respectifs.
+        <br>
+        Site réalisé dans un but pédagogique &mdash; 2026.
+      </p>
+
+    </div>
+  </footer>
+
+  <a href="#contenu" class="retour-haut" aria-label="Retour en haut de la page">
+    <span aria-hidden="true">&uarr;</span>
+  </a>
+
+</body>
+</html>

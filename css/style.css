@@ -1,0 +1,948 @@
+/* ============================================================
+   THE FORGE — style.css
+   Version 1 : HTML + CSS purs (chapitres 1 à 4)
+   Aucun framework. Tout est écrit à la main.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. RÉINITIALISATION
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a  { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+html { scroll-behavior: smooth; }
+:target { scroll-margin-top: 90px; }
+
+/* ------------------------------------------------------------
+   2. VARIABLES
+   ------------------------------------------------------------ */
+:root {
+  /* Couleurs — inspirées d'une forge : charbon, métal, braise */
+  --noir:        #0d0d0f;
+  --charbon:     #16161a;
+  --fumee:       #232329;
+  --acier:       #3a3a44;
+  --gris:        #9a9aa5;
+  --creme:       #f5f0e8;
+  --blanc:       #ffffff;
+
+  --braise:      #ff6a1a;
+  --braise-vive: #ff8c47;
+  --or:          #f5b342;
+
+  --degrade-feu: linear-gradient(135deg, #ff6a1a 0%, #f5b342 100%);
+
+  /* Typographie */
+  --police-titre: "Oswald", "Arial Narrow", sans-serif;
+  --police-texte: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Espacements — une échelle cohérente, fluide */
+  --esp-xs: 0.5rem;
+  --esp-sm: 1rem;
+  --esp-md: 2rem;
+  --esp-lg: clamp(2.5rem, 6vw, 4rem);
+  --esp-xl: clamp(3rem, 9vw, 6rem);
+
+  /* Arrondis */
+  --arrondi-sm: 4px;
+  --arrondi-md: 10px;
+  --arrondi-lg: 20px;
+
+  /* Ombres */
+  --ombre-douce:  0 4px 20px rgba(0, 0, 0, 0.35);
+  --ombre-forte:  0 12px 40px rgba(0, 0, 0, 0.55);
+  --ombre-braise: 0 6px 24px rgba(255, 106, 26, 0.35);
+
+  --transition: 250ms ease;
+}
+
+/* ------------------------------------------------------------
+   3. BASE
+   ------------------------------------------------------------ */
+body {
+  font-family: var(--police-texte);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--creme);
+  background-color: var(--noir);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2.2rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.7rem, 4.5vw, 2.5rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
+
+p { margin-bottom: var(--esp-sm); }
+
+strong { color: var(--or); font-weight: 700; }
+em     { color: var(--braise-vive); font-style: italic; }
+
+/* Accessibilité : un repère visible pour la navigation au clavier */
+:focus-visible {
+  outline: 3px solid var(--braise);
+  outline-offset: 3px;
+}
+
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--braise);
+  color: var(--noir);
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+}
+.lien-evitement:focus { left: 0; }
+
+/* ------------------------------------------------------------
+   4. CONTENEUR
+   Le motif universel : fond pleine largeur, contenu limité et centré.
+   ------------------------------------------------------------ */
+.conteneur {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--esp-md);
+  padding-right: var(--esp-md);
+}
+
+/* ------------------------------------------------------------
+   5. EN-TÊTE ET MENU
+   ------------------------------------------------------------ */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--esp-sm) 0;
+  background-color: rgba(13, 13, 15, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--acier);
+}
+
+.entete-contenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-xs);
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: var(--creme);
+  transition: color var(--transition);
+  z-index: 200;
+}
+.logo:hover { color: var(--braise); }
+.logo img   { width: 40px; height: 40px; }
+
+.menu {
+  display: flex;
+  gap: var(--esp-md);
+  align-items: center;
+}
+
+.menu a {
+  position: relative;
+  padding-bottom: 4px;
+  font-family: var(--police-titre);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gris);
+  transition: color var(--transition);
+}
+
+.menu a:hover,
+.menu a:focus,
+.menu a.actif { color: var(--braise); }
+
+/* Le trait qui se déploie au survol */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--degrade-feu);
+  transition: width var(--transition);
+}
+.menu a:hover::after,
+.menu a:focus::after,
+.menu a.actif::after { width: 100%; }
+
+/* ------------------------------------------------------------
+   6. MENU BURGER — CSS pur, sans JavaScript
+   ------------------------------------------------------------ */
+
+/* La case à cocher invisible mémorise l'état ouvert/fermé */
+.bascule-menu {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Le bouton visible : 3 barres */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.burger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--creme);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: all var(--transition);
+}
+
+/* 📱 Mobile : le menu est un panneau qui glisse depuis la droite */
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(80vw, 320px);
+  height: 100vh;
+  padding: 6rem var(--esp-md) var(--esp-md);
+  background-color: var(--charbon);
+  border-left: 1px solid var(--acier);
+  transform: translateX(100%);
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 150;
+}
+
+.navigation .menu {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--esp-md);
+}
+
+.navigation .menu a { font-size: 1.2rem; }
+
+/* 🪄 La ligne magique : case cochée → le menu entre */
+.bascule-menu:checked ~ .navigation { transform: translateX(0); }
+
+/* Le burger devient une croix */
+.bascule-menu:checked ~ .burger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.bascule-menu:checked ~ .burger span:nth-child(2) { opacity: 0; }
+.bascule-menu:checked ~ .burger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+/* Le voile sombre : cliquer à côté referme le menu */
+.voile {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 140;
+  display: none;
+}
+.bascule-menu:checked ~ .voile { display: block; }
+
+/* 💻 Ordinateur : on annule tout, retour au menu horizontal */
+@media (min-width: 992px) {
+  .burger,
+  .voile { display: none; }
+
+  .bascule-menu:checked ~ .voile { display: none; }
+
+  .navigation {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    transform: none;
+  }
+
+  .navigation .menu {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--esp-md);
+  }
+
+  .navigation .menu a { font-size: 0.95rem; }
+}
+
+/* ------------------------------------------------------------
+   7. HERO
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--esp-xl) var(--esp-md);
+
+  background-image:
+    linear-gradient(rgba(13, 13, 15, 0.75), rgba(13, 13, 15, 0.96)),
+    url("../assets/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-surtitre {
+  font-family: var(--police-titre);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--braise);
+  margin-bottom: var(--esp-xs);
+}
+
+.hero-titre {
+  font-size: clamp(3rem, 13vw, 8rem);
+  letter-spacing: 0.06em;
+  line-height: 0.95;
+  margin-bottom: var(--esp-xs);
+
+  /* Le texte prend la couleur du dégradé : effet métal chauffé */
+  background: var(--degrade-feu);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-slogan {
+  font-family: var(--police-titre);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--creme);
+  margin-bottom: var(--esp-md);
+}
+
+.hero-texte {
+  max-width: 55ch;
+  margin: 0 auto var(--esp-md);
+  color: var(--gris);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.hero-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-sm);
+  margin-bottom: var(--esp-lg);
+}
+
+.hero-infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-md);
+  color: var(--gris);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Un séparateur « · » devant tous les éléments sauf le premier */
+.hero-infos li + li::before {
+  content: "·";
+  margin-right: var(--esp-md);
+  color: var(--braise);
+}
+
+.hero-defilement {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  color: var(--gris);
+  font-size: 1.6rem;
+  animation: flotte 2s ease-in-out infinite;
+}
+
+@keyframes flotte {
+  0%, 100% { transform: translate(-50%, 0);    opacity: 0.55; }
+  50%      { transform: translate(-50%, 10px); opacity: 1; }
+}
+
+/* ------------------------------------------------------------
+   8. BOUTONS
+   ------------------------------------------------------------ */
+.bouton {
+  display: inline-block;
+  padding: 0.85rem 1.9rem;
+  font-family: var(--police-titre);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: var(--arrondi-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+              color var(--transition), border-color var(--transition);
+}
+
+.bouton-principal {
+  background: var(--degrade-feu);
+  color: var(--noir);
+  font-weight: 700;
+}
+.bouton-principal:hover,
+.bouton-principal:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--ombre-braise);
+}
+
+.bouton-secondaire {
+  background: transparent;
+  color: var(--creme);
+  border-color: var(--acier);
+}
+.bouton-secondaire:hover,
+.bouton-secondaire:focus {
+  border-color: var(--braise);
+  color: var(--braise);
+  transform: translateY(-3px);
+}
+
+/* ------------------------------------------------------------
+   9. SECTIONS
+   ------------------------------------------------------------ */
+.section { padding: var(--esp-xl) 0; }
+
+.section-sombre { background-color: var(--charbon); }
+
+.section-titre {
+  text-align: center;
+  margin-bottom: var(--esp-xs);
+}
+
+.section-titre::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: var(--esp-sm) auto 0;
+  background: var(--degrade-feu);
+  border-radius: 2px;
+}
+
+.section-chapeau {
+  text-align: center;
+  color: var(--gris);
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin: var(--esp-sm) auto var(--esp-lg);
+}
+
+.centre { text-align: center; }
+
+/* ------------------------------------------------------------
+   10. STATISTIQUES
+   ------------------------------------------------------------ */
+.grille-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--esp-md);
+}
+
+.stat { text-align: center; }
+
+/* Un trait vertical entre les colonnes, sauf devant la première */
+@media (min-width: 768px) {
+  .stat + .stat { border-left: 1px solid var(--acier); }
+}
+
+.stat-nombre {
+  font-family: var(--police-titre);
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  line-height: 1;
+  color: var(--braise);
+  margin-bottom: 0.35rem;
+}
+
+.stat-libelle {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   11. HISTOIRE (Flexbox : affiche fixe + texte flexible)
+   ------------------------------------------------------------ */
+.histoire-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-lg);
+  align-items: flex-start;
+}
+
+.histoire-affiche { flex: 0 0 320px; }
+
+.histoire-affiche img {
+  border-radius: var(--arrondi-md);
+  border: 1px solid var(--acier);
+  box-shadow: var(--ombre-forte);
+}
+
+.histoire-affiche figcaption {
+  margin-top: var(--esp-xs);
+  font-size: 0.78rem;
+  color: var(--acier);
+  text-align: center;
+}
+
+.histoire-texte {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* ------------------------------------------------------------
+   12. CITATION
+   ------------------------------------------------------------ */
+.citation {
+  border-left: 4px solid var(--braise);
+  padding: var(--esp-sm) var(--esp-md);
+  margin: var(--esp-md) 0;
+  background-color: rgba(255, 106, 26, 0.06);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.citation cite {
+  display: block;
+  margin-top: var(--esp-xs);
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--braise);
+}
+
+/* ------------------------------------------------------------
+   13. GRILLES DE CARTES (CSS Grid)
+   ------------------------------------------------------------ */
+.grille-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--esp-md);
+}
+
+.grille-personnages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--esp-md);
+  margin-bottom: var(--esp-lg);
+}
+
+.grille-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--esp-md);
+  margin-top: var(--esp-md);
+}
+
+/* ------------------------------------------------------------
+   14. CARTES
+   ------------------------------------------------------------ */
+.carte-theme,
+.carte-personnage,
+.carte-video {
+  background-color: var(--fumee);
+  border: 1px solid var(--acier);
+  border-radius: var(--arrondi-md);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition),
+              box-shadow var(--transition);
+}
+
+.carte-theme:hover,
+.carte-personnage:hover,
+.carte-video:hover {
+  transform: translateY(-6px);
+  border-color: var(--braise);
+  box-shadow: var(--ombre-forte);
+}
+
+/* --- Thème --- */
+.carte-theme {
+  position: relative;
+  padding: var(--esp-md);
+  border-left: 4px solid var(--braise);
+}
+
+.carte-theme h3 { color: var(--or); margin-bottom: var(--esp-xs); }
+.carte-theme p  { color: var(--gris); margin: 0; }
+
+/* Le gros numéro décoratif en fond */
+.carte-theme::before {
+  content: attr(data-numero);
+  position: absolute;
+  top: -0.6rem;
+  right: 0.6rem;
+  font-family: var(--police-titre);
+  font-size: 5rem;
+  color: var(--creme);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* --- Personnage --- */
+.carte-personnage {
+  display: flex;
+  flex-direction: column;
+}
+
+.carte-personnage img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.carte-corps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--esp-sm) var(--esp-md) var(--esp-md);
+}
+
+.carte-corps h3 { margin-bottom: 0.2rem; }
+
+.carte-acteur {
+  color: var(--braise);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--esp-xs);
+}
+
+.carte-description { color: var(--gris); flex: 1; }
+
+.carte-citation {
+  border-left: 3px solid var(--braise);
+  padding-left: var(--esp-sm);
+  margin-top: var(--esp-sm);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* --- Vidéo --- */
+.carte-video img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.carte-video h3  { padding: var(--esp-sm) var(--esp-sm) 0; font-size: 1.05rem; }
+
+.carte-duree {
+  color: var(--braise);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  padding: 0.25rem var(--esp-sm) var(--esp-sm);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   15. VIDÉO RESPONSIVE
+   ------------------------------------------------------------ */
+.video-principale {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--arrondi-md);
+  overflow: hidden;
+  border: 1px solid var(--acier);
+  box-shadow: var(--ombre-forte);
+}
+
+.video-principale iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 0;
+}
+
+/* ------------------------------------------------------------
+   16. GALERIE (Grid mosaïque)
+   ------------------------------------------------------------ */
+.grille-galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--esp-sm);
+}
+
+.element-galerie {
+  position: relative;
+  margin: 0;
+  border-radius: var(--arrondi-md);
+  border: 1px solid var(--acier);
+  overflow: hidden;
+}
+
+.element-galerie img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: grayscale(30%) brightness(0.85);
+  transition: transform 400ms ease, filter 400ms ease;
+}
+
+.element-galerie:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0) brightness(1);
+}
+
+.element-galerie figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: var(--esp-sm);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.88));
+  color: var(--creme);
+  font-size: 0.88rem;
+  transform: translateY(100%);
+  transition: transform 300ms ease;
+}
+
+.element-galerie:hover figcaption { transform: translateY(0); }
+
+/* La première image occupe 2 colonnes et 2 lignes : effet mosaïque */
+@media (min-width: 768px) {
+  .element-galerie:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .element-galerie:first-child img { aspect-ratio: auto; height: 100%; }
+}
+
+/* ------------------------------------------------------------
+   17. TABLEAU
+   ------------------------------------------------------------ */
+.tableau-fiche {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.tableau-fiche caption {
+  color: var(--gris);
+  font-size: 0.85rem;
+  margin-bottom: var(--esp-sm);
+}
+
+.tableau-fiche th,
+.tableau-fiche td {
+  padding: var(--esp-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--acier);
+}
+
+.tableau-fiche th {
+  width: 40%;
+  font-family: var(--police-titre);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--braise);
+}
+
+.tableau-fiche tr:hover td { background-color: rgba(255, 106, 26, 0.05); }
+
+/* ------------------------------------------------------------
+   18. APPEL À L'ACTION
+   ------------------------------------------------------------ */
+.appel-action {
+  text-align: center;
+  background: var(--degrade-feu);
+  color: var(--noir);
+  padding: var(--esp-lg) var(--esp-md);
+}
+
+.appel-action h2 { color: var(--noir); }
+.appel-action p  { color: rgba(13, 13, 15, 0.78); margin-bottom: var(--esp-md); }
+
+.appel-action .bouton-principal {
+  background: var(--noir);
+  color: var(--creme);
+}
+
+/* ------------------------------------------------------------
+   19. PIED DE PAGE
+   ------------------------------------------------------------ */
+.pied-page {
+  background-color: var(--charbon);
+  border-top: 1px solid var(--acier);
+  padding: var(--esp-lg) 0 var(--esp-md);
+}
+
+.pied-colonnes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--esp-lg);
+}
+
+.pied-colonne h3 {
+  font-size: 0.95rem;
+  color: var(--braise);
+  margin-bottom: var(--esp-sm);
+}
+
+.pied-colonne p,
+.pied-colonne a {
+  color: var(--gris);
+  font-size: 0.92rem;
+}
+
+.pied-colonne a  { transition: color var(--transition); }
+.pied-colonne a:hover { color: var(--braise); }
+.pied-colonne li { margin-bottom: var(--esp-xs); }
+
+.pied-reseaux {
+  display: flex;
+  gap: var(--esp-sm);
+  font-size: 1.3rem;
+}
+
+.pied-mentions {
+  margin-top: var(--esp-lg);
+  padding-top: var(--esp-md);
+  border-top: 1px solid var(--acier);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--acier);
+}
+
+/* ------------------------------------------------------------
+   20. RETOUR EN HAUT
+   ------------------------------------------------------------ */
+.retour-haut {
+  position: fixed;
+  bottom: var(--esp-md);
+  right: var(--esp-md);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--degrade-feu);
+  color: var(--noir);
+  font-size: 1.3rem;
+  display: grid;
+  place-items: center;
+  z-index: 90;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.retour-haut:hover { box-shadow: var(--ombre-braise); transform: translateY(-3px); }
+
+@media (max-width: 767px) {
+  .retour-haut { display: none; }
+}
+
+/* ============================================================
+   21. RESPONSIVE — ajustements par taille d'écran
+   (le CSS ci-dessus est la base MOBILE)
+   ============================================================ */
+
+/* 📱 Petits écrans */
+@media (max-width: 575px) {
+  .conteneur { padding-left: var(--esp-sm); padding-right: var(--esp-sm); }
+
+  .hero { min-height: 78vh; background-position: 60% center; }
+  .hero-infos { gap: var(--esp-sm); font-size: 0.72rem; }
+  .hero-infos li + li::before { margin-right: var(--esp-sm); }
+
+  .hero-boutons { flex-direction: column; width: 100%; }
+  .hero-boutons .bouton { width: 100%; }
+
+  .tableau-fiche th { width: 45%; font-size: 0.82rem; }
+  .tableau-fiche td { font-size: 0.9rem; }
+
+  .histoire-affiche { flex: 1 1 100%; }
+}
+
+/* 📱 Tablette */
+@media (min-width: 768px) {
+  .histoire-contenu { flex-wrap: nowrap; }
+}
+
+/* 💻 Ordinateur */
+@media (min-width: 992px) {
+  .hero-titre { letter-spacing: 0.1em; }
+  .section-chapeau { font-size: 1.2rem; }
+}
+
+/* 🖥️ Grand écran */
+@media (min-width: 1400px) {
+  .conteneur { max-width: 1320px; }
+}
+
+/* ------------------------------------------------------------
+   22. ACCESSIBILITÉ : mouvement réduit
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   23. IMPRESSION
+   ------------------------------------------------------------ */
+@media print {
+  .entete,
+  .burger,
+  .navigation,
+  .voile,
+  .hero-boutons,
+  .hero-defilement,
+  .video-principale,
+  .retour-haut,
+  .appel-action { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .section-sombre { background: #fff; }
+  .hero { min-height: auto; background: none; }
+  .hero-titre { color: #000; -webkit-text-fill-color: #000; }
+
+  a::after { content: " (" attr(href) ")"; font-size: 10pt; }
+}
